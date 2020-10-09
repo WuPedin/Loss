@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import torch
 
 class HuberLoss(torch.nn.Module):
     
@@ -13,7 +14,6 @@ class HuberLoss(torch.nn.Module):
         mask2 = residual > self.delta
         lossMAE = torch.sum(torch.sub(self.delta * residual[mask2], 0.5 * self.delta**2))
         
-        #return torch.div(torch.add(lossMSE, lossMAE), y.size()[0])
         return (lossMSE + lossMAE) / (y.size()[0])
 
 
