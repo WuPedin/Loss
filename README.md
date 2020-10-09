@@ -1,5 +1,4 @@
-# Loss
-Implement of some loss functions
+# PyTorch implement of some loss functions
 
 ## HuberLoss with delta
 
